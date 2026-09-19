@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CodeQuiz</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+    <header class="header">
+        <div class="logo">
+            Code<span>Quiz</span>
+        </div>
+
+        <div class="header-score">
+            Score: <span id="headerScore">0</span>
+        </div>
+    </header>
+
+
+    <!-- ================= LANGUAGE SCREEN ================= -->
+    <main>
+
+        <section id="languageScreen" class="screen language-screen">
+
+            <div class="welcome">
+                <p class="small-heading">WELCOME TO</p>
+
+                <h1>CodeQuiz</h1>
+
+                <p class="description">
+                    Test your programming knowledge and improve your skills.
+                </p>
+            </div>
+
+            <div class="language-container">
+
+                <h2>Choose Your Language</h2>
+
+                <p class="language-description">
+                    Select a programming language to begin your test.
+                </p>
+
+
+                <div class="language-list">
+
+                    <!-- 1. HTML -->
+                    <button class="language-btn" data-language="HTML">
+
+                        <span class="language-number">01</span>
+
+                        <span class="language-symbol">
+                            HTML
+                        </span>
+
+                        <span class="language-info">
+                            <strong>HTML</strong>
+                            <small>Web Structure</small>
+                        </span>
+
+                        <span class="language-arrow">→</span>
+
+                    </button>
+
+
+                    <!-- 2. CSS -->
+                    <button class="language-btn" data-language="CSS">
+
+                        <span class="language-number">02</span>
+
+                        <span class="language-symbol">
+                            CSS
+                        </span>
+
+                        <span class="language-info">
+                            <strong>CSS</strong>
+                            <small>Web Styling</small>
+                        </span>
+
+                        <span class="language-arrow">→</span>
+
+                    </button>
+
+
+                    <!-- 3. JavaScript -->
+                    <button class="language-btn" data-language="JavaScript">
+
+                        <span class="language-number">03</span>
+
+                        <span class="language-symbol">
+                            JS
+                        </span>
+
+                        <span class="language-info">
+                            <strong>JavaScript</strong>
+                            <small>Web Programming</small>
+                        </span>
+
+                        <span class="language-arrow">→</span>
+
+                    </button>
+
+
+                    <!-- 4. Python -->
+                    <button class="language-btn" data-language="Python">
+
+                        <span class="language-number">04</span>
+
+                        <span class="language-symbol">
+                            PY
+                        </span>
+
+                        <span class="language-info">
+                            <strong>Python</strong>
+                            <small>Programming</small>
+                        </span>
+
+                        <span class="language-arrow">→</span>
+
+                    </button>
+
+
+                    <!-- 5. Java -->
+                    <button class="language-btn" data-language="Java">
+
+                        <span class="language-number">05</span>
+
+                        <span class="language-symbol">
+                            JAVA
+                        </span>
+
+                        <span class="language-info">
+                            <strong>Java</strong>
+                            <small>Programming</small>
+                        </span>
+
+                        <span class="language-arrow">→</span>
+
+                    </button>
+
+
+                    <!-- 6. C++ -->
+                    <button class="language-btn" data-language="C++">
+
+                        <span class="language-number">06</span>
+
+                        <span class="language-symbol">
+                            C++
+                        </span>
+
+                        <span class="language-info">
+                            <strong>C++</strong>
+                            <small>Programming</small>
+                        </span>
+
+                        <span class="language-arrow">→</span>
+
+                    </button>
+
+
+                    <!-- 7. R -->
+                    <button class="language-btn" data-language="R">
+
+                        <span class="language-number">07</span>
+
+                        <span class="language-symbol">
+                            R
+                        </span>
+
+                        <span class="language-info">
+                            <strong>R</strong>
+                            <small>Data & Statistics</small>
+                        </span>
+
+                        <span class="language-arrow">→</span>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= QUIZ SCREEN ================= -->
+
+        <section id="quizScreen" class="screen quiz-screen">
+
+            <div class="quiz-header">
+
+                <div>
+                    <p class="quiz-label">CURRENT TEST</p>
+
+                    <h2 id="quizLanguage">
+                        HTML Quiz
+                    </h2>
+                </div>
+
+                <div class="attempt-box">
+                    Attempt
+                    <strong id="attemptNumber">1</strong>/5
+                </div>
+
+            </div>
+
+
+            <!-- TIMER -->
+
+            <div class="timer-container">
+
+                <div class="timer-text">
+                    Time Left:
+                    <strong>
+                        <span id="timer">30</span>s
+                    </strong>
+                </div>
+
+                <div class="timer-bar">
+                    <div id="timerProgress"></div>
+                </div>
+
+            </div>
+
+
+            <!-- QUESTION PROGRESS -->
+
+            <div class="question-progress">
+
+                <div>
+                    Question
+                    <strong id="questionNumber">1</strong>
+                    of
+                    <strong id="totalQuestions">10</strong>
+                </div>
+
+                <div>
+                    <strong id="currentScore">0</strong> Marks
+                </div>
+
+            </div>
+
+
+            <!-- PROGRESS BAR -->
+
+            <div class="progress-container">
+
+                <div id="progressBar"></div>
+
+            </div>
+
+
+            <!-- QUESTION -->
+
+            <div class="question-card">
+
+                <h2 id="question">
+                    Question goes here
+                </h2>
+
+                <div id="options" class="options"></div>
+
+            </div>
+
+
+            <!-- NEXT BUTTON -->
+
+            <button id="nextBtn" class="primary-btn" disabled>
+                Next Question →
+            </button>
+
+        </section>
+
+
+        <!-- ================= REVIEW SCREEN ================= -->
+
+        <section id="reviewScreen" class="screen review-screen">
+
+            <div class="review-header">
+
+                <p class="small-heading">
+                    TEST COMPLETED
+                </p>
+
+                <h1>Test Review</h1>
+
+                <p id="reviewAttempt">
+                    Attempt 1
+                </p>
+
+            </div>
+
+
+            <!-- SCORE SUMMARY -->
+
+            <div class="score-summary">
+
+                <div class="score-box">
+                    <span>Score</span>
+                    <strong id="reviewScore">0/10</strong>
+                </div>
+
+                <div class="score-box correct-box">
+                    <span>Correct</span>
+                    <strong id="correctCount">0</strong>
+                </div>
+
+                <div class="score-box wrong-box">
+                    <span>Wrong</span>
+                    <strong id="wrongCount">0</strong>
+                </div>
+
+            </div>
+
+
+            <!-- PERFORMANCE -->
+
+            <div class="performance-box">
+
+                <p>Your Performance</p>
+
+                <h2 id="performanceMessage">
+                    Good
+                </h2>
+
+            </div>
+
+
+            <!-- QUESTIONS REVIEW -->
+
+            <div id="reviewList" class="review-list"></div>
+
+
+            <!-- TRY AGAIN -->
+
+            <button id="tryAgainBtn" class="primary-btn">
+                Try Another Test ↻
+            </button>
+
+        </section>
+
+
+        <!-- ================= FINAL RESULT SCREEN ================= -->
+
+        <section id="resultScreen" class="screen result-screen">
+
+            <div class="result-card">
+
+                <p class="small-heading">
+                    FINAL RESULT
+                </p>
+
+                <h1>Test Completed!</h1>
+
+                <div class="final-score">
+
+                    <span>Your Score</span>
+
+                    <strong id="finalScore">
+                        0/10
+                    </strong>
+
+                </div>
+
+
+                <!-- PERFORMANCE MESSAGE -->
+
+                <div class="final-performance">
+
+                    <p>Your Performance</p>
+
+                    <h2 id="finalMessage">
+                        Excellent
+                    </h2>
+
+                </div>
+
+
+                <!-- ================= BACK BUTTON ================= -->
+
+                <button
+                    id="backToLanguageBtn"
+                    class="back-language-btn"
+                >
+                    ← Back to Choose Language
+                </button>
+
+
+                <!-- ================= QUIT BOX ================= -->
+
+                <div class="quit-box">
+
+                    <div class="quit-icon">
+                        Q
+                    </div>
+
+                    <div class="quit-content">
+
+                        <strong>
+                            Don't want to take another test?
+                        </strong>
+
+                        <p>
+                            Press <span>Q</span> to quit the test.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <p class="result-note">
+                    You have completed all 5 attempts.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+        <p>
+            © 2026 CodeQuiz. Practice. Learn. Improve.
+        </p>
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
